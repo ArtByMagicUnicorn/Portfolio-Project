@@ -1,0 +1,56 @@
+﻿@page
+@model Portfolio_Project.Pages.Projects.IndexModel
+
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<section class="projects-header">
+    <p class="eyebrow">Portfolio</p>
+    <h1>Projects</h1>
+    <p>
+        A small collection of things I have built, explored, or learned from.
+    </p>
+</section>
+
+@if (!Model.Projects.Any())
+{
+    <section class="empty-state">
+        <h2>No projects yet</h2>
+        <p>Once projects are added to the database, they will show up here.</p>
+    </section>
+}
+else
+{
+    <section class="project-grid">
+        @foreach (var project in Model.Projects)
+        {
+            <article class="project-card">
+                @if (project.IsFeatured)
+                {
+                    <span class="featured-label">Featured</span>
+                }
+
+                <h2>@project.Title</h2>
+                <p>@project.Summary</p>
+
+                @if (!string.IsNullOrWhiteSpace(project.TechStack))
+                {
+                    <p class="tech-stack">@project.TechStack</p>
+                }
+
+                <div class="project-links">
+                    @if (!string.IsNullOrWhiteSpace(project.GitHubUrl))
+                    {
+                        <a href="@project.GitHubUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(project.LiveUrl))
+                    {
+                        <a href="@project.LiveUrl" target="_blank" rel="noopener noreferrer">Live site</a>
+                    }
+                </div>
+            </article>
+        }
+    </section>
+}
