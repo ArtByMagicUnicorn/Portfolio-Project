@@ -38,6 +38,15 @@ public class EditModel : PageModel
             return Page();
         }
 
+        var slugExists = await _context.Projects
+    .AnyAsync(project => project.Slug == Project.Slug && project.Id != Project.Id);
+
+        if (slugExists)
+        {
+            ModelState.AddModelError("Project.Slug", "This slug is already used by another project.");
+            return Page();
+        }
+
         _context.Attach(Project).State = EntityState.Modified;
 
         try

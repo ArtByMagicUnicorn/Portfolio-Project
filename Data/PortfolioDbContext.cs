@@ -11,4 +11,11 @@ public class PortfolioDbContext : DbContext
     }
 
     public DbSet<PortfolioProject> Projects => Set<PortfolioProject>();
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<PortfolioProject>()
+            .HasIndex(project => project.Slug)
+            .IsUnique();
+    }
 }

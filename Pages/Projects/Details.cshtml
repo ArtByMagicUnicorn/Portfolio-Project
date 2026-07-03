@@ -1,0 +1,48 @@
+﻿@page "{slug}"
+@model Portfolio_Project.Pages.Projects.DetailsModel
+
+@{
+    ViewData["Title"] = Model.Project.Title;
+}
+
+<article class="project-detail">
+    <a asp-page="./Index" class="btn btn-outline-secondary mb-3">
+        Back to projects
+    </a>
+    <p class="eyebrow">Project</p>
+    <h1>@Model.Project.Title</h1>
+
+    <p class="lead">@Model.Project.Summary</p>
+
+    @if (!string.IsNullOrWhiteSpace(Model.Project.TechStack))
+    {
+        <p class="tech-stack">@Model.Project.TechStack</p>
+    }
+
+    <div class="project-links mb-4">
+        @if (!string.IsNullOrWhiteSpace(Model.Project.GitHubUrl))
+        {
+            <a href="@Model.Project.GitHubUrl" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">GitHub</a>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.Project.LiveUrl))
+        {
+            <a href="@Model.Project.LiveUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live site</a>
+        }
+    </div>
+
+    <section class="project-description">
+        <h2>About this project</h2>
+
+        @if (string.IsNullOrWhiteSpace(Model.Project.DescriptionMarkdown))
+        {
+            <p>No description has been added yet.</p>
+        }
+        else
+        {
+            <div class="project-markdown">
+                @Html.Raw(Model.DescriptionHtml)
+            </div>
+        }
+    </section>
+</article>
