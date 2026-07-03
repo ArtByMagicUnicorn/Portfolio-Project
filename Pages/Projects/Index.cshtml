@@ -26,34 +26,43 @@ else
         @foreach (var project in Model.Projects)
         {
             <article class="project-card">
-                @if (project.IsFeatured)
-                {
-                    <span class="featured-label">Featured</span>
-                }
-
-                <h2>@project.Title</h2>
-                <p>@project.Summary</p>
-
-                @if (!string.IsNullOrWhiteSpace(project.TechStack))
-                {
-                    <p class="tech-stack">@project.TechStack</p>
-                }
-
-                <div class="project-links">
-                    <a asp-page="./Details" asp-route-slug="@project.Slug" class="btn btn-outline-primary">
-                        View project
-                    </a>
-
-                    @if (!string.IsNullOrWhiteSpace(project.GitHubUrl))
+                <div class="project-card-content">
+                    @if (project.IsFeatured)
                     {
-                        <a href="@project.GitHubUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <span class="featured-label">Featured</span>
                     }
 
-                    @if (!string.IsNullOrWhiteSpace(project.LiveUrl))
+                    <h2>@project.Title</h2>
+                    <p>@project.Summary</p>
+
+                    @if (!string.IsNullOrWhiteSpace(project.TechStack))
                     {
-                        <a href="@project.LiveUrl" target="_blank" rel="noopener noreferrer">Live site</a>
+                        <p class="tech-stack">@project.TechStack</p>
                     }
+
+                    <div class="project-links">
+                        <a asp-page="./Details" asp-route-slug="@project.Slug" class="btn btn-outline-primary">
+                            View project
+                        </a>
+
+                        @if (!string.IsNullOrWhiteSpace(project.GitHubUrl))
+                        {
+                            <a href="@project.GitHubUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(project.LiveUrl))
+                        {
+                            <a href="@project.LiveUrl" target="_blank" rel="noopener noreferrer">Live site</a>
+                        }
+                    </div>
                 </div>
+
+                @if (!string.IsNullOrWhiteSpace(project.ScreenshotUrl))
+                {
+                    <img src="@project.ScreenshotUrl"
+                         alt="Screenshot of @project.Title"
+                         class="project-card-image" />
+                }
             </article>
         }
     </section>

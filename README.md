@@ -1,8 +1,3 @@
----
-created: 2026-07-03T13:49
-updated: 2026-07-03T13:50
----
-
 # Portfolio Project
 
 A personal portfolio platform built with ASP.NET Core Razor Pages, EF Core, SQLite, and Markdown.
@@ -97,3 +92,4 @@ The SQLite database file is not committed to source control. It is created local
 - Add tests
 - Add GitHub Actions for build validation
 - Deploy the portfolio online
+- Add Azure Blob Storage image uploads for project screenshots

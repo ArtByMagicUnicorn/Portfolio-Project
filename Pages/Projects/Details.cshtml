@@ -19,6 +19,13 @@
         <p class="tech-stack">@Model.Project.TechStack</p>
     }
 
+    @if (!string.IsNullOrWhiteSpace(Model.Project.ScreenshotUrl))
+    {
+        <img src="@Model.Project.ScreenshotUrl"
+             alt="Screenshot of @Model.Project.Title"
+             class="project-detail-image" />
+    }
+
     <div class="project-links mb-4">
         @if (!string.IsNullOrWhiteSpace(Model.Project.GitHubUrl))
         {
