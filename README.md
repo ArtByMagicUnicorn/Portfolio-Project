@@ -14,6 +14,11 @@ The goal of this project is to keep my C# skills active while building something
 - Validation for required fields, URLs, and slug format
 - Unique slugs for reliable project URLs
 - Automatic slug generation from project titles
+- About page with focus areas and contact links
+- Project screenshots on listing and detail pages
+- Admin thumbnails for easier project management
+- Responsive footer with project and contact links
+- Screenshot fallback UI for projects without images
 
 ## Tech Stack
 
