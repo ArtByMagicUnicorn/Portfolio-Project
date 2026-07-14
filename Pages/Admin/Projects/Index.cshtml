@@ -28,6 +28,7 @@ else
                 <th>Tech stack</th>
                 <th>Featured</th>
                 <th>Created</th>
+                <th>Preview</th>
                 <th></th>
             </tr>
         </thead>
@@ -39,6 +40,20 @@ else
                     <td>@project.TechStack</td>
                     <td>@(project.IsFeatured ? "Yes" : "No")</td>
                     <td>@project.CreatedAt.ToLocalTime().ToString("yyyy-MM-dd")</td>
+                    <td>
+                        @if (!string.IsNullOrWhiteSpace(project.ScreenshotUrl))
+                        {
+                            <img src="@project.ScreenshotUrl"
+                                 alt="Screenshot of @project.Title"
+                                 class="admin-project-thumbnail" />
+                        }
+                        else
+                        {
+                            <div class="admin-project-thumbnail admin-project-thumbnail-fallback">
+                                <span>@project.Title</span>
+                            </div>
+                        }
+                    </td>
                     <td>
                         <a asp-page="./Edit" asp-route-id="@project.Id">Edit</a>
                         |

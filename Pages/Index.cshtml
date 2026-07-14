@@ -1,10 +1,100 @@
 ﻿@page
 @model IndexModel
+
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="home-hero">
+    <div class="home-hero-content">
+        <p class="eyebrow">Cloud & C# Developer Portfolio</p>
+        <h1>Building thoughtful web apps with C# and ASP.NET Core.</h1>
+        <p>
+            This portfolio is both a presentation site and a small CMS built with Razor Pages,
+            EF Core, SQLite, Markdown, and a healthy amount of curiosity.
+        </p>
+
+        <div class="hero-actions">
+            <a asp-page="/Projects/Index" class="btn btn-primary">View projects</a>
+            <a asp-page="/About" class="btn btn-outline-secondary">About me</a>
+            <a href="https://github.com/ArtByMagicUnicorn" class="btn btn-outline-secondary" target="_blank" rel="noopener noreferrer">
+                GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="section-heading">
+        <p class="eyebrow">Focus areas</p>
+        <h2>What I work with</h2>
+    </div>
+
+    <div class="focus-grid">
+        <article class="focus-card">
+            <h3>C# & ASP.NET Core</h3>
+            <p>
+                Building web apps with Razor Pages, EF Core, and clean backend structure.
+            </p>
+        </article>
+
+        <article class="focus-card">
+            <h3>Cloud Development</h3>
+            <p>
+                Learning and applying Azure concepts such as app hosting, storage,
+                deployment, and cloud-ready architecture.
+            </p>
+        </article>
+
+        <article class="focus-card">
+            <h3>Practical UX</h3>
+            <p>
+                Creating tools that are simple to use, easy to maintain, and pleasant to work with.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="section-heading">
+        <p class="eyebrow">Featured work</p>
+        <h2>Selected projects</h2>
+    </div>
+
+    @if (Model.FeaturedProjects.Count == 0)
+    {
+        <p>No featured projects yet.</p>
+    }
+    else
+    {
+        <div class="featured-project-grid">
+            @foreach (var project in Model.FeaturedProjects)
+            {
+                <article class="featured-project-card">
+                    @if (!string.IsNullOrWhiteSpace(project.ScreenshotUrl))
+                    {
+                        <img src="@project.ScreenshotUrl"
+                             alt="Screenshot of @project.Title"
+                             class="featured-project-image" />
+                    }
+
+                    <div class="featured-project-content">
+                        <h3>@project.Title</h3>
+                        <p>@project.Summary</p>
+
+                        @if (!string.IsNullOrWhiteSpace(project.TechStack))
+                        {
+                            <p class="tech-stack">@project.TechStack</p>
+                        }
+
+                        <a asp-page="/Projects/Details"
+                           asp-route-slug="@project.Slug"
+                           class="btn btn-outline-primary">
+                            View project
+                        </a>
+                    </div>
+                </article>
+            }
+        </div>
+    }
+</section>

@@ -56,6 +56,12 @@
         <span asp-validation-for="Project.LiveUrl" class="text-danger"></span>
     </div>
 
+    <div class="mb-3">
+        <label asp-for="Project.ScreenshotUrl" class="form-label"></label>
+        <input asp-for="Project.ScreenshotUrl" class="form-control" />
+        <span asp-validation-for="Project.ScreenshotUrl" class="text-danger"></span>
+    </div>
+
     <div class="form-check mb-3">
         <input asp-for="Project.IsFeatured" class="form-check-input" />
         <label asp-for="Project.IsFeatured" class="form-check-label"></label>

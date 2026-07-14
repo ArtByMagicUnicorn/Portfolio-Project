@@ -37,6 +37,10 @@ public class PortfolioProject
     [Display(Name = "Live URL")]
     public string? LiveUrl { get; set; }
 
+    [Url]
+    [Display(Name = "Screenshot URL")]
+    public string? ScreenshotUrl { get; set; }
+
     [Display(Name = "Featured")]
     public bool IsFeatured { get; set; }
 
