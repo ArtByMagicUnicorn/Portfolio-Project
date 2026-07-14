@@ -63,6 +63,12 @@ else
                          alt="Screenshot of @project.Title"
                          class="project-card-image" />
                 }
+                else
+                {
+                    <div class="project-card-image project-card-image-fallback">
+                        <span>@project.Title</span>
+                    </div>
+                }
             </article>
         }
     </section>

@@ -292,6 +292,39 @@ main {
         margin-bottom: 0;
     }
 
+.contact-section {
+    align-items: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr auto;
+    margin-bottom: 4rem;
+    padding: 1.5rem;
+}
+
+    .contact-section h2 {
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        font-weight: 800;
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-section p {
+        color: var(--color-muted);
+        line-height: 1.7;
+        margin-bottom: 0;
+        max-width: 680px;
+    }
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+    
+
 .project-links {
     display: flex;
     flex-wrap: wrap;
@@ -330,10 +363,95 @@ main {
     padding: 1.5rem;
 }
 
+.project-card-image-fallback,
+.project-detail-image-fallback {
+    align-items: center;
+    background: linear-gradient(135deg, rgba(219, 39, 119, 0.14), rgba(124, 58, 237, 0.16)), var(--color-surface);
+    display: flex;
+    justify-content: center;
+    min-height: 180px;
+    padding: 1rem;
+    text-align: center;
+}
+
+    .project-card-image-fallback span,
+    .project-detail-image-fallback span {
+        color: var(--color-text);
+        font-size: 1.1rem;
+        font-weight: 800;
+    }
+
 .table {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
 }
+
+.admin-project-thumbnail {
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--color-border);
+    border-radius: 0.4rem;
+    display: block;
+    height: 54px;
+    object-fit: cover;
+    width: 96px;
+}
+
+.admin-project-thumbnail-fallback {
+    align-items: center;
+    background: linear-gradient(135deg, rgba(219, 39, 119, 0.12), rgba(124, 58, 237, 0.14)), var(--color-surface);
+    display: flex;
+    justify-content: center;
+    padding: 0.35rem;
+    text-align: center;
+}
+
+    .admin-project-thumbnail-fallback span {
+        color: var(--color-muted);
+        font-size: 0.72rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+.table .admin-project-thumbnail {
+    height: 54px;
+    width: 96px;
+}
+
+.site-footer {
+    border-top: 1px solid var(--color-border);
+    margin-top: 4rem;
+    padding: 1.25rem 0;
+}
+
+.site-footer-inner {
+    align-items: center;
+    color: var(--color-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+    .footer-links a {
+        color: var(--color-muted);
+        text-decoration: none;
+    }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+
 
 @media (max-width: 768px) {
     .project-card {
@@ -342,5 +460,18 @@ main {
 
     .project-card-image {
         order: -1;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-actions {
+        justify-content: flex-start;
+    }
+
+    .site-footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
     }
 }

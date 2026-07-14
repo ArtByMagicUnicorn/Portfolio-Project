@@ -25,6 +25,12 @@
              alt="Screenshot of @Model.Project.Title"
              class="project-detail-image" />
     }
+    else
+    {
+        <div class="project-detail-image project-detail-image-fallback">
+            <span>@Model.Project.Title</span>
+        </div>
+    }
 
     <div class="project-links mb-4">
         @if (!string.IsNullOrWhiteSpace(Model.Project.GitHubUrl))
