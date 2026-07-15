@@ -24,7 +24,7 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore "Portfolio Project/Portfolio Project.csproj"
+        run: dotnet restore "Portfolio Project.csproj"
 
       - name: Build
-        run: dotnet build "Portfolio Project/Portfolio Project.csproj" --configuration Release --no-restore
+        run: dotnet build "Portfolio Project.csproj" --configuration Release --no-restore
