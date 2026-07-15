@@ -1,5 +1,7 @@
 # Portfolio Project
 
+[![Build](https://github.com/ArtByMagicUnicorn/Portfolio-Project/actions/workflows/build.yml/badge.svg)](https://github.com/ArtByMagicUnicorn/Portfolio-Project/actions/workflows/build.yml)
+
 A personal portfolio platform built with ASP.NET Core Razor Pages, EF Core, SQLite, and Markdown.
 
 The goal of this project is to keep my C# skills active while building something useful: a portfolio site where I can manage and present projects through a small admin area.

@@ -10,8 +10,21 @@ namespace Portfolio_Project
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddRazorPages();
+            builder.Services
+    .AddAuthentication("PortfolioAuth")
+    .AddCookie("PortfolioAuth", options =>
+    {
+        options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+        options.AccessDeniedPath = "/Account/Login";
+    });
+
+            builder.Services.AddAuthorization();
+
+            builder.Services.AddRazorPages(options =>
+            {
+                options.Conventions.AuthorizeFolder("/Admin");
+            });
 
             builder.Services.AddDbContext<PortfolioDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("PortfolioDb")));
@@ -30,6 +43,7 @@ namespace Portfolio_Project
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapStaticAssets();
