@@ -21,6 +21,8 @@ The goal of this project is to keep my C# skills active while building something
 - Admin thumbnails for easier project management
 - Responsive footer with project and contact links
 - Screenshot fallback UI for projects without images
+- Authentication for the admin area
+- Local credentials is handled using User Secrets
 
 ## Tech Stack
 
@@ -92,7 +94,7 @@ The SQLite database file is not committed to source control. It is created local
 
 ## Roadmap
 
-- Add authentication for the admin area
+
 - Improve visual design
 - Add Markdown preview in admin
 - Add project screenshots

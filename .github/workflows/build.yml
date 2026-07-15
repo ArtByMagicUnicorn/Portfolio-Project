@@ -28,3 +28,6 @@ jobs:
 
       - name: Build
         run: dotnet build "Portfolio Project.csproj" --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test "PortfolioProject.Tests/PortfolioProject.Tests.csproj" --configuration Release --no-build
