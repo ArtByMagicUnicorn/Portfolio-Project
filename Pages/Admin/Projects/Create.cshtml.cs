@@ -19,8 +19,38 @@ public class CreateModel : PageModel
     [BindProperty]
     public PortfolioProject Project { get; set; } = new();
 
+    private const string DefaultDescriptionMarkdown = """
+## Overview
+
+Short summary of what the project does and why it was built.
+
+## My role
+
+What I worked on, what decisions I contributed to, and what parts I implemented.
+
+## Tech stack
+
+- C#
+- ASP.NET Core
+- EF Core
+- Azure
+
+## What I learned
+
+Describe the practical skills I developed while building this project.
+
+## Challenges
+
+Explain one or two problems I solved.
+
+## What I would improve next
+
+Show reflection and growth.
+""";
+
     public void OnGet()
     {
+        Project.DescriptionMarkdown = DefaultDescriptionMarkdown;
     }
 
     public async Task<IActionResult> OnPostAsync()
