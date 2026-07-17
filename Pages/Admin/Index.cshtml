@@ -1,0 +1,42 @@
+﻿@page
+@model Portfolio_Project.Pages.Admin.IndexModel
+
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<section class="admin-header">
+    <p class="eyebrow">Admin</p>
+    <h1>Dashboard</h1>
+    <p>Manage portfolio content and keep an eye on project coverage.</p>
+</section>
+
+<section class="admin-stats-grid">
+    <article class="admin-stat-card">
+        <span>Total projects</span>
+        <strong>@Model.TotalProjects</strong>
+    </article>
+
+    <article class="admin-stat-card">
+        <span>Featured</span>
+        <strong>@Model.FeaturedProjects</strong>
+    </article>
+
+    <article class="admin-stat-card">
+        <span>With screenshots</span>
+        <strong>@Model.ProjectsWithScreenshots</strong>
+    </article>
+</section>
+
+<section class="admin-actions-panel">
+    <div>
+        <h2>Projects</h2>
+        <p>Create new case studies, edit project details, and manage screenshots.</p>
+    </div>
+
+    <div class="admin-actions">
+        <a asp-page="/Admin/Projects/Create" class="btn btn-primary">Create project</a>
+        <a asp-page="/Admin/Projects/Index" class="btn btn-outline-secondary">Manage projects</a>
+        <a asp-page="/Projects/Index" class="btn btn-outline-secondary">View public projects</a>
+    </div>
+</section>

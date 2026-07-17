@@ -29,13 +29,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-page="/Projects/Index">Projects</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/CV">Resume</a>
+                        </li>
                     </ul>
 
                     <ul class="navbar-nav ms-auto">
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-page="/Admin/Projects/Index">Admin</a>
+                                <a class="nav-link text-dark" asp-page="/Admin/Index">Admin</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-page="/Account/Logout">Logout</a>
