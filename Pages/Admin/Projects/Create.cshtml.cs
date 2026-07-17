@@ -4,6 +4,7 @@ using Portfolio_Project.Data;
 using Portfolio_Project.Models;
 using Microsoft.EntityFrameworkCore;
 using Portfolio_Project.Helpers;
+using Markdig;
 
 namespace Portfolio_Project.Pages.Admin.Projects;
 
@@ -19,8 +20,40 @@ public class CreateModel : PageModel
     [BindProperty]
     public PortfolioProject Project { get; set; } = new();
 
+    private const string DefaultDescriptionMarkdown = """
+## Overview
+
+Short summary of what the project does and why it was built.
+
+## My role
+
+What I worked on, what decisions I contributed to, and what parts I implemented.
+
+## Tech stack
+
+- C#
+- ASP.NET Core
+- EF Core
+- Azure
+
+## What I learned
+
+Describe the practical skills I developed while building this project.
+
+## Challenges
+
+Explain one or two problems I solved.
+
+## What I would improve next
+
+Show reflection and growth.
+""";
+
+    public string DescriptionPreviewHtml { get; set; } = "";
+
     public void OnGet()
     {
+        Project.DescriptionMarkdown = DefaultDescriptionMarkdown;
     }
 
     public async Task<IActionResult> OnPostAsync()
@@ -50,5 +83,12 @@ public class CreateModel : PageModel
         await _context.SaveChangesAsync();
 
         return RedirectToPage("/Projects/Index");
+    }
+
+    public IActionResult OnPostPreview()
+    {
+        DescriptionPreviewHtml = Markdown.ToHtml(Project.DescriptionMarkdown ?? "");
+
+        return Page();
     }
 }

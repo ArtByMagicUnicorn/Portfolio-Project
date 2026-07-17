@@ -1,0 +1,33 @@
+﻿name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore "Portfolio Project.csproj"
+
+      - name: Build
+        run: dotnet build "Portfolio Project.csproj" --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test "PortfolioProject.Tests/PortfolioProject.Tests.csproj" --configuration Release --no-build

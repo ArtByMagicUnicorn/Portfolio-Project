@@ -1,5 +1,7 @@
 # Portfolio Project
 
+[![Build](https://github.com/ArtByMagicUnicorn/Portfolio-Project/actions/workflows/build.yml/badge.svg)](https://github.com/ArtByMagicUnicorn/Portfolio-Project/actions/workflows/build.yml)
+
 A personal portfolio platform built with ASP.NET Core Razor Pages, EF Core, SQLite, and Markdown.
 
 The goal of this project is to keep my C# skills active while building something useful: a portfolio site where I can manage and present projects through a small admin area.
@@ -14,6 +16,13 @@ The goal of this project is to keep my C# skills active while building something
 - Validation for required fields, URLs, and slug format
 - Unique slugs for reliable project URLs
 - Automatic slug generation from project titles
+- About page with focus areas and contact links
+- Project screenshots on listing and detail pages
+- Admin thumbnails for easier project management
+- Responsive footer with project and contact links
+- Screenshot fallback UI for projects without images
+- Authentication for the admin area
+- Local credentials is handled using User Secrets
 
 ## Tech Stack
 
@@ -85,7 +94,7 @@ The SQLite database file is not committed to source control. It is created local
 
 ## Roadmap
 
-- Add authentication for the admin area
+
 - Improve visual design
 - Add Markdown preview in admin
 - Add project screenshots

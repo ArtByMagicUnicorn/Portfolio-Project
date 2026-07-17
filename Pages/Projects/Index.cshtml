@@ -34,27 +34,6 @@ else
 
                     <h2>@project.Title</h2>
                     <p>@project.Summary</p>
-
-                    @if (!string.IsNullOrWhiteSpace(project.TechStack))
-                    {
-                        <p class="tech-stack">@project.TechStack</p>
-                    }
-
-                    <div class="project-links">
-                        <a asp-page="./Details" asp-route-slug="@project.Slug" class="btn btn-outline-primary">
-                            View project
-                        </a>
-
-                        @if (!string.IsNullOrWhiteSpace(project.GitHubUrl))
-                        {
-                            <a href="@project.GitHubUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        }
-
-                        @if (!string.IsNullOrWhiteSpace(project.LiveUrl))
-                        {
-                            <a href="@project.LiveUrl" target="_blank" rel="noopener noreferrer">Live site</a>
-                        }
-                    </div>
                 </div>
 
                 @if (!string.IsNullOrWhiteSpace(project.ScreenshotUrl))
@@ -69,6 +48,42 @@ else
                         <span>@project.Title</span>
                     </div>
                 }
+
+                @if (!string.IsNullOrWhiteSpace(project.TechStack))
+                {
+                    <div class="tech-stack-list">
+                        @foreach (var tech in project.TechStack.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+                        {
+                            <span class="tech-chip">@tech</span>
+                        }
+                    </div>
+                }
+
+                <div class="project-links">
+                    <a asp-page="./Details" asp-route-slug="@project.Slug" class="btn btn-primary">
+                        View project
+                    </a>
+
+                    @if (!string.IsNullOrWhiteSpace(project.GitHubUrl))
+                    {
+                        <a href="@project.GitHubUrl"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-outline-secondary">
+                            GitHub
+                        </a>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(project.LiveUrl))
+                    {
+                        <a href="@project.LiveUrl"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-outline-secondary">
+                            Live site
+                        </a>
+                    }
+                </div>
             </article>
         }
     </section>

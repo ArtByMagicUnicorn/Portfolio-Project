@@ -1,0 +1,31 @@
+﻿@page
+@model Portfolio_Project.Pages.Account.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="admin-header">
+    <p class="eyebrow">Admin</p>
+    <h1>Login</h1>
+    <p>Sign in to manage portfolio content.</p>
+</section>
+
+<form method="post" class="project-form">
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger">@Model.ErrorMessage</div>
+    }
+
+    <div class="mb-3">
+        <label asp-for="Username" class="form-label"></label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

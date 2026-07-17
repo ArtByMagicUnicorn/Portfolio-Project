@@ -13,6 +13,7 @@
 
 <p>
     <a asp-page="./Create" class="btn btn-primary">Create project</a>
+    <a asp-page="/Admin/Index" class="btn btn-outline-secondary">Dashboard</a>
 </p>
 
 @if (Model.Projects.Count == 0)
@@ -24,11 +25,11 @@ else
     <table class="table">
         <thead>
             <tr>
+                <th>Preview</th>
                 <th>Title</th>
                 <th>Tech stack</th>
                 <th>Featured</th>
                 <th>Created</th>
-                <th>Preview</th>
                 <th></th>
             </tr>
         </thead>
@@ -36,11 +37,7 @@ else
             @foreach (var project in Model.Projects)
             {
                 <tr>
-                    <td>@project.Title</td>
-                    <td>@project.TechStack</td>
-                    <td>@(project.IsFeatured ? "Yes" : "No")</td>
-                    <td>@project.CreatedAt.ToLocalTime().ToString("yyyy-MM-dd")</td>
-                    <td>
+                    <td class="admin-preview-cell">
                         @if (!string.IsNullOrWhiteSpace(project.ScreenshotUrl))
                         {
                             <img src="@project.ScreenshotUrl"
@@ -54,6 +51,10 @@ else
                             </div>
                         }
                     </td>
+                    <td>@project.Title</td>
+                    <td>@project.TechStack</td>
+                    <td>@(project.IsFeatured ? "Yes" : "No")</td>
+                    <td>@project.CreatedAt.ToLocalTime().ToString("yyyy-MM-dd")</td>
                     <td>
                         <a asp-page="./Edit" asp-route-id="@project.Id">Edit</a>
                         |

@@ -1,0 +1,140 @@
+﻿@page
+@model Portfolio_Project.Pages.CvModel
+
+@{
+    ViewData["Title"] = "CV";
+}
+
+<section class="cv-hero">
+    <div>
+        <p class="eyebrow">CV</p>
+        <h1>Martina Halldin</h1>
+        <p class="cv-title">Junior Cloud Developer</p>
+        <p class="cv-intro">
+            Cloud Developer student with a background in IT support and coordination.
+            I combine practical problem solving, user understanding, and growing skills
+            in C#, ASP.NET Core, Azure, and Docker.
+        </p>
+
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:martina.halldin@gmail.com">Contact me</a>
+            <a class="btn btn-outline-secondary" href="https://github.com/ArtByMagicUnicorn" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-outline-secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-outline-secondary"
+               href="/files/cv-martina-halldin.pdf"
+               target="_blank"
+               rel="noopener">
+                Download CV
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="cv-section">
+    <p class="eyebrow">Core skills</p>
+    <h2>What I work with</h2>
+
+    <div class="skill-cloud">
+        <span>C#</span>
+        <span>ASP.NET Core</span>
+        <span>Razor Pages</span>
+        <span>Azure</span>
+        <span>Docker</span>
+        <span>Git</span>
+        <span>Databases</span>
+        <span>Identity & Access Management</span>
+        <span>Technical support</span>
+        <span>Team coordination</span>
+    </div>
+</section>
+
+<section class="cv-section cv-grid">
+    <article>
+        <p class="eyebrow">Experience</p>
+        <h2>Work experience</h2>
+
+        <div class="cv-timeline">
+            <div class="cv-item">
+                <p class="cv-meta">2015 - Present</p>
+                <h3>Mölndals Stad</h3>
+                <p class="cv-role">Helpdesk Technician / IT Coordinator</p>
+                <p>
+                    Technical support, incident handling, identity and access administration,
+                    and coordination of daily Helpdesk work.
+                </p>
+            </div>
+
+            <div class="cv-item">
+                <p class="cv-meta">2008 - 2015</p>
+                <h3>VGR Regionservice</h3>
+                <p class="cv-role">Switchboard Operator</p>
+                <p>
+                    Call handling, medical alarm handling, and administrative scheduling tasks
+                    in a high-responsibility environment.
+                </p>
+            </div>
+
+            <div class="cv-item">
+                <p class="cv-meta">2004 - 2007</p>
+                <h3>Skövde Kommun</h3>
+                <p class="cv-role">Care Assistant</p>
+                <p>
+                    Care work, daily support tasks, supervision, and medicine distribution.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <article>
+        <p class="eyebrow">Education</p>
+        <h2>Education</h2>
+
+        <div class="cv-timeline">
+            <div class="cv-item">
+                <p class="cv-meta">2025 - 2027</p>
+                <h3>YH Campus Mölndal</h3>
+                <p class="cv-role">Cloud Developer</p>
+                <p>
+                    C#, testing and quality assurance, databases, cloud applications,
+                    consulting skills, and communication.
+                </p>
+            </div>
+
+            <div class="cv-item">
+                <p class="cv-meta">2004 - 2007</p>
+                <h3>Högskolan i Skövde</h3>
+                <p class="cv-role">Industrial Economics</p>
+                <p>
+                    Logistics, supply chain management, project management, organization,
+                    mathematics, statistics, and economics.
+                </p>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section class="cv-section cv-grid">
+    <article>
+        <p class="eyebrow">Strengths</p>
+        <h2>In a team I am</h2>
+
+        <ul class="cv-list">
+            <li>Structured and reliable</li>
+            <li>Creative and solution-focused</li>
+            <li>Social and generous with knowledge</li>
+            <li>A planner, coordinator, and team player</li>
+        </ul>
+    </article>
+
+    <article>
+        <p class="eyebrow">More</p>
+        <h2>Additional information</h2>
+
+        <ul class="cv-list">
+            <li>Swedish: native language</li>
+            <li>English: fluent in speech and writing</li>
+            <li>Driver's license: B</li>
+            <li>Experience from union and association trust assignments</li>
+        </ul>
+    </article>
+</section>

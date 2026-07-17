@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
 namespace Portfolio_Project.Models;
 
 public class PortfolioProject
@@ -37,7 +38,6 @@ public class PortfolioProject
     [Display(Name = "Live URL")]
     public string? LiveUrl { get; set; }
 
-    [Url]
     [Display(Name = "Screenshot URL")]
     public string? ScreenshotUrl { get; set; }
 
