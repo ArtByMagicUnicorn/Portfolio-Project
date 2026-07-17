@@ -10,19 +10,22 @@ The goal of this project is to keep my C# skills active while building something
 
 - Public project listing
 - Project detail pages with slug-based URLs
+- Project screenshots with fallback UI
+- Project descriptions rendered from Markdown
+- Admin dashboard with project overview
 - Admin area for creating, editing, and deleting projects
-- SQLite database with EF Core
-- Markdown rendering for project descriptions
+- Markdown preview in admin forms
+- Automatic slug generation from project titles
 - Validation for required fields, URLs, and slug format
 - Unique slugs for reliable project URLs
-- Automatic slug generation from project titles
-- About page with focus areas and contact links
-- Project screenshots on listing and detail pages
-- Admin thumbnails for easier project management
-- Responsive footer with project and contact links
-- Screenshot fallback UI for projects without images
 - Authentication for the admin area
-- Local credentials is handled using User Secrets
+- Local admin credentials handled using User Secrets
+- About page with focus areas and contact links
+- Resume page with downloadable CV
+- Responsive footer with project and contact links
+- GitHub Actions build validation
+- Unit tests for slug generation
+- Deployment checklist for future hosting
 
 ## Tech Stack
 
@@ -37,16 +40,26 @@ The goal of this project is to keep my C# skills active while building something
 
 ```text
 Pages/
+  Index
+  About
+  CV
+
   Projects/
     Index
     Details
 
   Admin/
+    Index
+
     Projects/
       Index
       Create
       Edit
       Delete
+
+  Account/
+    Login
+    Logout
 
 Data/
   PortfolioDbContext
@@ -56,8 +69,13 @@ Models/
 
 Helpers/
   SlugHelper
+  MarkdownHelper
 
-```
+PortfolioProject.Tests/
+  SlugHelperTests
+
+docs/
+  deployment.md
 
 ## Getting Started
 
@@ -94,11 +112,9 @@ The SQLite database file is not committed to source control. It is created local
 
 ## Roadmap
 
-
-- Improve visual design
-- Add Markdown preview in admin
-- Add project screenshots
-- Add tests
-- Add GitHub Actions for build validation
 - Deploy the portfolio online
 - Add Azure Blob Storage image uploads for project screenshots
+- Add an English downloadable CV
+- Improve admin dashboard statistics
+- Add more portfolio projects
+- Add richer project filtering or search
