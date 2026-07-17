@@ -38,6 +38,7 @@
     <Folder Include="docs\" />
     <Folder Include="wwwroot\images\profile\" />
     <Folder Include="wwwroot\images\projects\" />
+    <Folder Include="wwwroot\files\" />
   </ItemGroup>
 
 </Project>

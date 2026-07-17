@@ -474,6 +474,92 @@ main {
             font-weight: 800;
         }
 
+.cv-hero {
+    padding: 5rem 0 3rem;
+    max-width: 980px;
+}
+
+.cv-title {
+    color: var(--color-accent);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cv-intro {
+    color: var(--color-muted);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 760px;
+}
+
+.cv-section {
+    padding: 3rem 0;
+}
+
+    .cv-section h2 {
+        margin-bottom: 1.5rem;
+    }
+
+.skill-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+    .skill-cloud span {
+        background: rgba(0, 188, 212, 0.12);
+        border: 1px solid rgba(0, 188, 212, 0.35);
+        border-radius: 999px;
+        color: #007c91;
+        font-weight: 700;
+        padding: 0.55rem 0.85rem;
+    }
+
+.cv-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+    .cv-grid article {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 0.75rem;
+        box-shadow: 0 18px 45px rgba(31, 41, 51, 0.06);
+        padding: 1.5rem;
+    }
+
+.cv-timeline {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.cv-item {
+    border-left: 4px solid var(--color-accent);
+    padding-left: 1rem;
+}
+
+.cv-meta {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.cv-role {
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.cv-list {
+    color: var(--color-muted);
+    line-height: 1.9;
+    margin-bottom: 0;
+    padding-left: 1.25rem;
+}
+
     .tech-stack-list {
         display: flex;
         flex-wrap: wrap;
@@ -678,5 +764,13 @@ main {
 
         .admin-actions {
             justify-content: flex-start;
+        }
+
+        .cv-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .cv-hero {
+            padding-top: 3rem;
         }
     }
