@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Portfolio_Project.Data;
 using Portfolio_Project.Models;
+using Markdig;
 
 namespace Portfolio_Project.Pages.Admin.Projects;
 
@@ -17,6 +18,8 @@ public class EditModel : PageModel
 
     [BindProperty]
     public PortfolioProject Project { get; set; } = new();
+
+    public string DescriptionPreviewHtml { get; set; } = "";
 
     public async Task<IActionResult> OnGetAsync(int id)
     {
@@ -66,5 +69,12 @@ public class EditModel : PageModel
         }
 
         return RedirectToPage("./Index");
+    }
+
+    public IActionResult OnPostPreview()
+    {
+        DescriptionPreviewHtml = Markdown.ToHtml(Project.DescriptionMarkdown ?? "");
+
+        return Page();
     }
 }

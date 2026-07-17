@@ -4,6 +4,7 @@ using Portfolio_Project.Data;
 using Portfolio_Project.Models;
 using Microsoft.EntityFrameworkCore;
 using Portfolio_Project.Helpers;
+using Markdig;
 
 namespace Portfolio_Project.Pages.Admin.Projects;
 
@@ -48,6 +49,8 @@ Explain one or two problems I solved.
 Show reflection and growth.
 """;
 
+    public string DescriptionPreviewHtml { get; set; } = "";
+
     public void OnGet()
     {
         Project.DescriptionMarkdown = DefaultDescriptionMarkdown;
@@ -80,5 +83,12 @@ Show reflection and growth.
         await _context.SaveChangesAsync();
 
         return RedirectToPage("/Projects/Index");
+    }
+
+    public IActionResult OnPostPreview()
+    {
+        DescriptionPreviewHtml = Markdown.ToHtml(Project.DescriptionMarkdown ?? "");
+
+        return Page();
     }
 }

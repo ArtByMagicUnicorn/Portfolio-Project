@@ -16,7 +16,12 @@
 
     @if (!string.IsNullOrWhiteSpace(Model.Project.TechStack))
     {
-        <p class="tech-stack">@Model.Project.TechStack</p>
+        <div class="tech-stack-list">
+            @foreach (var tech in Model.Project.TechStack.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+            {
+                <span class="tech-chip">@tech</span>
+            }
+        </div>
     }
 
     @if (!string.IsNullOrWhiteSpace(Model.Project.ScreenshotUrl))
