@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/Portfolio_Project.styles.css" asp-append-version="true" />
 </head>
 <body>
+    <div id="top"></div>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -88,5 +89,8 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+    <a href="#top" class="back-to-top" aria-label="Back to top">
+        ↑
+    </a>
 </body>
 </html>
