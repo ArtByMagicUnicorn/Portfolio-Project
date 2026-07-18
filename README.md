@@ -107,12 +107,25 @@ dotnet run
 ```
 
 Then open the local URL shown in the terminal.
+```
 
 ## Notes
 
 The SQLite database file is not committed to source control. It is created locally from EF Core migrations.
 
-![Portfolio home page](wwwroot/images/readme/Screenshot2.png)
+## Screenshots
+
+### About
+
+![Portfolio home page](wwwroot/images/readme/Screenshot1.png)
+
+### Resume
+
+![Resume page](wwwroot/images/readme/Screenshot2.png)
+
+### Admin dashboard
+
+![Admin dashboard](wwwroot/images/readme/Admin-dashboard.png)
 
 ## Roadmap
 
