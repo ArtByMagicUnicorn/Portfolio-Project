@@ -79,6 +79,8 @@ PortfolioProject.Tests/
 docs/
   deployment.md
 
+  ```
+
 ## Getting Started
 
 Clone the repository:
@@ -107,7 +109,6 @@ dotnet run
 ```
 
 Then open the local URL shown in the terminal.
-```
 
 ## Notes
 
