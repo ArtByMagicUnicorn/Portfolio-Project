@@ -6,6 +6,8 @@ A personal portfolio platform built with ASP.NET Core Razor Pages, EF Core, SQLi
 
 The goal of this project is to keep my C# skills active while building something useful: a portfolio site where I can manage and present projects through a small admin area.
 
+![Portfolio home page](wwwroot/images/readme/Screenshot1.png)
+
 ## Features
 
 - Public project listing
@@ -109,6 +111,8 @@ Then open the local URL shown in the terminal.
 ## Notes
 
 The SQLite database file is not committed to source control. It is created locally from EF Core migrations.
+
+![Portfolio home page](wwwroot/images/readme/Screenshot2.png)
 
 ## Roadmap
 
