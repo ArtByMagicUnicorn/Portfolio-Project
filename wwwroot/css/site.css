@@ -356,14 +356,31 @@ a {
 }
 
 .project-detail {
-    max-width: 820px;
+    max-width: none;
 }
+
+.project-detail-hero {
+    align-items: center;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    margin-bottom: 3rem;
+}
+
+    .project-detail-hero .lead {
+        max-width: 680px;
+    }
+
+    .project-detail-hero .project-links {
+        margin-top: 1.5rem;
+    }
 
 .project-detail-image {
     aspect-ratio: 16 / 9;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
-    margin: 1.5rem 0;
+    box-shadow: var(--shadow-card);
+    margin: 0;
     object-fit: cover;
     width: 100%;
 }
@@ -420,6 +437,10 @@ a {
     box-shadow: var(--shadow-soft);
     max-width: 860px;
     padding: 1.5rem;
+}
+
+.project-description {
+    max-width: 860px;
 }
 
 /* Chips and tags */
@@ -814,6 +835,15 @@ a {
         order: -1;
     }
 
+    .project-detail-hero {
+        grid-template-columns: 1fr;
+    }
+
+        .project-detail-hero .project-detail-image {
+            margin-top: 0.5rem;
+            max-height: 260px;
+        }
+
     .contact-actions,
     .admin-actions,
     .cv-portrait-wrap {
@@ -834,6 +864,10 @@ a {
         border-bottom: 1px solid var(--color-border);
         border-right: 0;
         max-height: 220px;
+    }
+
+    .featured-project-content .tech-stack-list {
+        margin-bottom: 1rem;
     }
 
     .cv-hero {
