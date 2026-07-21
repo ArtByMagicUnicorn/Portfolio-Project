@@ -11,13 +11,13 @@ namespace Portfolio_Project
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services
-    .AddAuthentication("PortfolioAuth")
-    .AddCookie("PortfolioAuth", options =>
-    {
-        options.LoginPath = "/Account/Login";
-        options.LogoutPath = "/Account/Logout";
-        options.AccessDeniedPath = "/Account/Login";
-    });
+                .AddAuthentication("PortfolioAuth")
+                .AddCookie("PortfolioAuth", options =>
+                {
+                    options.LoginPath = "/Account/Login";
+                    options.LogoutPath = "/Account/Logout";
+                    options.AccessDeniedPath = "/Account/Login";
+                });
 
             builder.Services.AddAuthorization();
 
@@ -27,7 +27,9 @@ namespace Portfolio_Project
             });
 
             builder.Services.AddDbContext<PortfolioDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("PortfolioDb")));
+            {
+                options.UseSqlite(builder.Configuration.GetConnectionString("PortfolioDb"));
+            });
 
             var app = builder.Build();
 

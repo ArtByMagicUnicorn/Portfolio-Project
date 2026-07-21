@@ -41,3 +41,8 @@
 - [ ] Test deleting a test project
 - [ ] Check that screenshots/images load
 - [ ] Check the site on mobile
+
+
+local: Data Source=portfolio.db
+production: connection string via environment/app setting
+admin credentials via environment/app setting
