@@ -773,6 +773,94 @@ a {
     line-height: 1;
 }
 
+.dashboard-panel-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.dashboard-count {
+    align-items: center;
+    background: var(--gradient-magic);
+    border-radius: 999px;
+    color: #ffffff;
+    display: inline-flex;
+    font-weight: 800;
+    height: 2.5rem;
+    justify-content: center;
+    min-width: 2.5rem;
+    padding: 0 0.85rem;
+}
+
+.attention-list {
+    display: grid;
+    gap: 0.85rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .attention-list li {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-card);
+        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.06);
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .attention-list strong {
+        color: var(--color-text);
+        display: block;
+        font-size: 1.05rem;
+    }
+
+.attention-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+    .attention-tags span {
+        background: rgba(217, 45, 125, 0.1);
+        border: 1px solid rgba(217, 45, 125, 0.22);
+        border-radius: 999px;
+        color: var(--color-accent);
+        display: inline-flex;
+        font-size: 0.85rem;
+        font-weight: 700;
+        line-height: 1;
+        padding: 0.45rem 0.7rem;
+    }
+
+.attention-list .btn {
+    flex: 0 0 auto;
+}
+
+.dashboard-panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    margin-top: 2rem;
+    padding: 1.75rem;
+}
+
+    .dashboard-panel h2 {
+        margin-bottom: 0.75rem;
+    }
+
+    .dashboard-panel p:not(.eyebrow) {
+        color: var(--color-muted);
+        margin-bottom: 1.25rem;
+    }
+
 .admin-actions-panel {
     align-items: center;
     background: var(--color-surface);
@@ -829,6 +917,48 @@ a {
     font-size: 0.72rem;
     font-weight: 700;
     line-height: 1.2;
+}
+
+.dashboard-panel .admin-actions {
+    margin-top: 1.25rem;
+}
+
+.admin-actions-under {
+    justify-content: flex-start;
+    margin-top: 1.25rem;
+}
+
+.status-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.status-pill {
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 0.8rem;
+    font-weight: 800;
+    line-height: 1;
+    padding: 0.4rem 0.65rem;
+}
+
+.status-pill-featured {
+    background: rgba(255, 178, 0, 0.16);
+    border: 1px solid rgba(255, 178, 0, 0.34);
+    color: #9a5d00;
+}
+
+.status-pill-warning {
+    background: rgba(217, 45, 125, 0.1);
+    border: 1px solid rgba(217, 45, 125, 0.24);
+    color: var(--color-accent);
+}
+
+.status-pill-complete {
+    background: rgba(0, 150, 136, 0.12);
+    border: 1px solid rgba(0, 150, 136, 0.28);
+    color: #00796b;
 }
 
 .table .admin-project-thumbnail {
@@ -906,5 +1036,14 @@ a {
 
     .cv-portrait {
         max-width: 260px;
+    }
+
+    .attention-list li {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .attention-list .btn {
+        width: 100%;
     }
 }

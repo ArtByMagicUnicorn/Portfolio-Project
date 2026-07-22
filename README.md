@@ -28,6 +28,10 @@ The goal of this project is to keep my C# skills active while building something
 - GitHub Actions build validation
 - Unit tests for slug generation
 - Deployment checklist for future hosting
+- Search and filtering for portfolio projects
+- Custom 404 page
+- Favicon and personal branding
+- Project screenshots in README
 
 ## Tech Stack
 
@@ -127,6 +131,15 @@ The SQLite database file is not committed to source control. It is created local
 ### Admin dashboard
 
 ![Admin dashboard](wwwroot/images/readme/Admin-dashboard.png)
+
+## Featured Projects
+
+- **Portfolio Engine** - The portfolio platform itself, built with Razor Pages, EF Core, SQLite, Markdown, authentication, admin CRUD, search, and GitHub Actions.
+
+- **The Snaxers Luxury Chocolate** - A school project focused on cloud applications with Azure Container Apps, Cosmos DB, Blob Storage, Key Vault, Managed Identity, and Application Insights.
+
+- **Tarot.Web** - An interactive tarot web application built with ASP.NET Core MVC, EF Core, SQLite, Razor Views, Bootstrap, and JSON-seeded card data.
+
 
 ## Roadmap
 

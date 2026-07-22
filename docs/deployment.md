@@ -43,6 +43,15 @@
 - [ ] Check the site on mobile
 
 
-local: Data Source=portfolio.db
-production: connection string via environment/app setting
-admin credentials via environment/app setting
+## Configuration notes
+
+Local development:
+- SQLite uses the connection string from `appsettings.json`.
+- Admin credentials are stored with User Secrets.
+- No admin credentials should be committed to source control.
+
+Production:
+- `ConnectionStrings__PortfolioDb` should be configured as an environment variable/app setting.
+- `AdminUser__Username` should be configured as an environment variable/app setting.
+- `AdminUser__Password` should be configured as an environment variable/app setting.
+- The SQLite database file must be stored in a persistent writable location provided by the hosting platform.
