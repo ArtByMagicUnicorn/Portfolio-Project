@@ -6,23 +6,33 @@ A personal portfolio platform built with ASP.NET Core Razor Pages, EF Core, SQLi
 
 The goal of this project is to keep my C# skills active while building something useful: a portfolio site where I can manage and present projects through a small admin area.
 
+![Portfolio home page](wwwroot/images/readme/Screenshot1.png)
+
 ## Features
 
 - Public project listing
 - Project detail pages with slug-based URLs
+- Project screenshots with fallback UI
+- Project descriptions rendered from Markdown
+- Admin dashboard with project stats, content quality checks, project status overview, and deployment readiness reminders.
 - Admin area for creating, editing, and deleting projects
-- SQLite database with EF Core
-- Markdown rendering for project descriptions
+- Markdown preview in admin forms
+- Automatic slug generation from project titles
 - Validation for required fields, URLs, and slug format
 - Unique slugs for reliable project URLs
-- Automatic slug generation from project titles
-- About page with focus areas and contact links
-- Project screenshots on listing and detail pages
-- Admin thumbnails for easier project management
-- Responsive footer with project and contact links
-- Screenshot fallback UI for projects without images
 - Authentication for the admin area
-- Local credentials is handled using User Secrets
+- Local admin credentials handled using User Secrets
+- About page with focus areas and contact links
+- Resume page with downloadable CV
+- Responsive footer with project and contact links
+- GitHub Actions build validation
+- Unit tests for slug generation
+- Deployment checklist for future hosting
+- Search and filtering for portfolio projects
+- Custom 404 page
+- Favicon and personal branding
+- Project screenshots in README
+
 
 ## Tech Stack
 
@@ -37,16 +47,26 @@ The goal of this project is to keep my C# skills active while building something
 
 ```text
 Pages/
+  Index
+  About
+  CV
+
   Projects/
     Index
     Details
 
   Admin/
+    Index
+
     Projects/
       Index
       Create
       Edit
       Delete
+
+  Account/
+    Login
+    Logout
 
 Data/
   PortfolioDbContext
@@ -56,8 +76,15 @@ Models/
 
 Helpers/
   SlugHelper
+  MarkdownHelper
 
-```
+PortfolioProject.Tests/
+  SlugHelperTests
+
+docs/
+  deployment.md
+
+  ```
 
 ## Getting Started
 
@@ -92,13 +119,34 @@ Then open the local URL shown in the terminal.
 
 The SQLite database file is not committed to source control. It is created locally from EF Core migrations.
 
+## Screenshots
+
+### About
+
+![Portfolio home page](wwwroot/images/readme/Screenshot1.png)
+
+### Resume
+
+![Resume page](wwwroot/images/readme/Screenshot2.png)
+
+### Admin dashboard
+
+![Admin dashboard](wwwroot/images/readme/Admin-dashboard.png)
+
+## Featured Projects
+
+- **Portfolio Engine** - The portfolio platform itself, built with Razor Pages, EF Core, SQLite, Markdown, authentication, admin CRUD, search, and GitHub Actions.
+
+- **The Snaxers Luxury Chocolate** - A school project focused on cloud applications with Azure Container Apps, Cosmos DB, Blob Storage, Key Vault, Managed Identity, and Application Insights.
+
+- **Tarot.Web** - An interactive tarot web application built with ASP.NET Core MVC, EF Core, SQLite, Razor Views, Bootstrap, and JSON-seeded card data.
+
+
 ## Roadmap
 
-
-- Improve visual design
-- Add Markdown preview in admin
-- Add project screenshots
-- Add tests
-- Add GitHub Actions for build validation
 - Deploy the portfolio online
 - Add Azure Blob Storage image uploads for project screenshots
+- Add an English downloadable CV
+- Improve admin dashboard statistics
+- Add more portfolio projects
+- Add richer project filtering or search

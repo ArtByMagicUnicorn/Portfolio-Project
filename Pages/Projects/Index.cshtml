@@ -9,15 +9,50 @@
     <p class="eyebrow">Portfolio</p>
     <h1>Projects</h1>
     <p>
-        A small collection of things I have built, explored, or learned from.
+        A selection of practical projects where I explore C#, ASP.NET Core, cloud development, and structured web application design.
     </p>
+
+    <form method="get" class="project-search">
+        <label asp-for="Search" class="form-label">Search projects</label>
+
+        <div class="project-search-row">
+            <input asp-for="Search"
+                   class="form-control"
+                   placeholder="Search by title, summary, or tech stack" />
+
+            <button type="submit" class="btn btn-primary">Search</button>
+
+            @if (!string.IsNullOrWhiteSpace(Model.Search))
+            {
+                <a asp-page="./Index" class="btn btn-outline-secondary">Clear</a>
+            }
+        </div>
+    </form>
+
+    @if (!string.IsNullOrWhiteSpace(Model.Search))
+    {
+        <p class="search-result-text">
+            Showing results for <strong>@Model.Search</strong>
+        </p>
+    }
 </section>
 
 @if (!Model.Projects.Any())
 {
     <section class="empty-state">
-        <h2>No projects yet</h2>
-        <p>Once projects are added to the database, they will show up here.</p>
+        @if (!string.IsNullOrWhiteSpace(Model.Search))
+        {
+            <h2>No matching projects</h2>
+            <p>
+                No projects matched your search for <strong>@Model.Search</strong>.
+            </p>
+            <a asp-page="./Index" class="btn btn-outline-secondary">Clear search</a>
+        }
+        else
+        {
+            <h2>No projects yet</h2>
+            <p>Once projects are added to the database, they will show up here.</p>
+        }
     </section>
 }
 else

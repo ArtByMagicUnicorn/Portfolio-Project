@@ -8,7 +8,7 @@
 <section class="admin-header">
     <p class="eyebrow">Admin</p>
     <h1>Dashboard</h1>
-    <p>Manage portfolio content and keep an eye on project coverage.</p>
+    <p>Manage portfolio content, review project status, and keep the public pages polished.</p>
 </section>
 
 <section class="admin-stats-grid">
@@ -28,15 +28,96 @@
     </article>
 </section>
 
-<section class="admin-actions-panel">
-    <div>
-        <h2>Projects</h2>
-        <p>Create new case studies, edit project details, and manage screenshots.</p>
+@if (Model.LatestProject is not null)
+{
+    <section class="dashboard-panel">
+        <p class="eyebrow">Latest project</p>
+        <h2>@Model.LatestProject.Title</h2>
+        <p>
+            Added @Model.LatestProject.CreatedAt.ToString("yyyy-MM-dd")
+        </p>
+        <a asp-page="/Projects/Details"
+           asp-route-slug="@Model.LatestProject.Slug"
+           class="btn btn-outline-secondary">
+            View project
+        </a>
+    </section>
+}
+
+<section class="dashboard-panel">
+    <div class="dashboard-panel-header">
+        <div>
+            <p class="eyebrow">Content check</p>
+            <h2>Needs attention</h2>
+        </div>
+
+        <span class="dashboard-count">
+            @Model.ProjectsNeedingAttention.Count
+        </span>
     </div>
 
-    <div class="admin-actions">
+    @if (!Model.ProjectsNeedingAttention.Any())
+    {
+        <p>All projects have screenshots, descriptions, and GitHub links in place.</p>
+    }
+    else
+    {
+        <ul class="attention-list">
+            @foreach (var project in Model.ProjectsNeedingAttention)
+            {
+                <li>
+                    <div>
+                        <strong>@project.Title</strong>
+
+                        <div class="attention-tags">
+                            @if (string.IsNullOrWhiteSpace(project.ScreenshotUrl))
+                            {
+                                <span>Missing screenshot</span>
+                            }
+
+                            @if (string.IsNullOrWhiteSpace(project.GitHubUrl))
+                            {
+                                <span>Missing GitHub</span>
+                            }
+
+                            @if (string.IsNullOrWhiteSpace(project.DescriptionMarkdown))
+                            {
+                                <span>Missing description</span>
+                            }
+                        </div>
+                    </div>
+
+                    <a asp-page="/Admin/Projects/Edit"
+                       asp-route-id="@project.Id"
+                       class="btn btn-outline-secondary">
+                        Edit
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+</section>
+
+<section class="dashboard-panel">
+    <p class="eyebrow">Project tools</p>
+    <h2>Project management</h2>
+    <p>Create new case studies, edit project details, and review the public project list.</p>
+
+    <div class="admin-actions admin-actions-under">
         <a asp-page="/Admin/Projects/Create" class="btn btn-primary">Create project</a>
         <a asp-page="/Admin/Projects/Index" class="btn btn-outline-secondary">Manage projects</a>
         <a asp-page="/Projects/Index" class="btn btn-outline-secondary">View public projects</a>
     </div>
+</section>
+
+<section class="dashboard-panel">
+    <p class="eyebrow">Deployment</p>
+    <h2>Readiness checklist</h2>
+
+    <ul class="readiness-list">
+        <li>Admin credentials configured outside source control</li>
+        <li>Database storage planned for production</li>
+        <li>GitHub Actions build is green</li>
+        <li>README and project screenshots are up to date</li>
+    </ul>
 </section>

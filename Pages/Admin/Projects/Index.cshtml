@@ -60,6 +60,25 @@ else
                         |
                         <a asp-page="./Delete" asp-route-id="@project.Id">Delete</a>
                     </td>
+                    <td>
+                        <div class="status-list">
+                            @if (project.IsFeatured)
+                            {
+                                <span class="status-pill status-pill-featured">Featured</span>
+                            }
+
+                            @if (string.IsNullOrWhiteSpace(project.ScreenshotUrl) ||
+                                 string.IsNullOrWhiteSpace(project.GitHubUrl) ||
+                                 string.IsNullOrWhiteSpace(project.DescriptionMarkdown))
+                            {
+                                <span class="status-pill status-pill-warning">Needs content</span>
+                            }
+                            else
+                            {
+                                <span class="status-pill status-pill-complete">Complete</span>
+                            }
+                        </div>
+                    </td>
                 </tr>
             }
         </tbody>
