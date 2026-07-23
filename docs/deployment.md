@@ -55,3 +55,4 @@ Production:
 - `AdminUser__Username` should be configured as an environment variable/app setting.
 - `AdminUser__Password` should be configured as an environment variable/app setting.
 - The SQLite database file must be stored in a persistent writable location provided by the hosting platform.
+- ConnectionStrings__PortfolioDb=Data Source=/home/site/data/portfolio.db

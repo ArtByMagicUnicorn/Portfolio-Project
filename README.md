@@ -14,7 +14,7 @@ The goal of this project is to keep my C# skills active while building something
 - Project detail pages with slug-based URLs
 - Project screenshots with fallback UI
 - Project descriptions rendered from Markdown
-- Admin dashboard with project overview
+- Admin dashboard with project stats, content quality checks, project status overview, and deployment readiness reminders.
 - Admin area for creating, editing, and deleting projects
 - Markdown preview in admin forms
 - Automatic slug generation from project titles
@@ -32,6 +32,7 @@ The goal of this project is to keep my C# skills active while building something
 - Custom 404 page
 - Favicon and personal branding
 - Project screenshots in README
+
 
 ## Tech Stack
 

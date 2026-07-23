@@ -13,8 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="PortfolioProject.Tests\**\*.cs" />
-  </ItemGroup>
+  <Compile Remove="PortfolioProject.Tests\**\*.cs" />
+  <Content Remove="PortfolioProject.Tests\**\*" />
+  <None Remove="PortfolioProject.Tests\**\*" />
+  <EmbeddedResource Remove="PortfolioProject.Tests\**\*" />
+</ItemGroup>
 
   <ItemGroup>
     <Content Include="docs\deployment.md" />
