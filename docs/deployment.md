@@ -24,6 +24,13 @@
 - [ ] Confirm that the app can read and write project data
 - [ ] Make sure the database file is not committed to Git
 
+## Database migrations
+
+The application applies EF Core migrations automatically on startup.
+
+This keeps deployment simple for this small single-user portfolio CMS. For a larger
+production system, migrations should normally be handled as a separate deployment step.
+
 ## Hosting
 
 - [ ] Choose hosting option
@@ -55,4 +62,5 @@ Production:
 - `AdminUser__Username` should be configured as an environment variable/app setting.
 - `AdminUser__Password` should be configured as an environment variable/app setting.
 - The SQLite database file must be stored in a persistent writable location provided by the hosting platform.
-- ConnectionStrings__PortfolioDb=Data Source=/home/site/data/portfolio.db
+- Example SQLite connection string for Linux App Service:
+`ConnectionStrings__PortfolioDb=Data Source=/home/site/data/portfolio.db`
